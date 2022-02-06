@@ -64,7 +64,6 @@ export class Listener extends EventEmitter {
     })
 
     try {
-      console.log('Checking with AWS for new messages')
       const { Messages } = await this.sqsClient!.send(command)
       if (Messages) {
         Messages.map((msg) => this.processMessage(msg))
