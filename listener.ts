@@ -107,6 +107,7 @@ export class Listener extends EventEmitter {
         }
       }
     }
+  await this.deleteMessage(message)
   }
 
   private async deleteMessage(message: _SQS.Message): Promise<void> {
