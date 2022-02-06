@@ -1,12 +1,12 @@
 import _SQS, { ReceiveMessageCommand, DeleteMessageCommand } from '@aws-sdk/client-sqs'
 import { EventEmitter } from 'events'
 
-interface Events {
+export interface Events {
   message: [_SQS.Message]
   error: [Error, void | _SQS.Message]
 }
 
-interface ListenerOptions {
+export interface ListenerOptions {
   queueUrl: string
   sqsClient: _SQS.SQSClient
   pollingWaitTimeMs?: number
